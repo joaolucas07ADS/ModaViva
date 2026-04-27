@@ -1,0 +1,45 @@
+body{
+
+    /* 1. O caminho da sua imagem */
+    background-image: url('/Frontend/assets/imagem\ de\ fundo02.svg');
+
+    /* 2. Faz a imagem cobrir toda a área sem distorcer (essencial) */
+    background-size: cover;
+
+    /* 3. Centraliza a imagem na tela */
+    background-position: center center;
+
+    /* 4. Impede que a imagem se repita (lado a lado) */
+    background-repeat: no-repeat;
+
+    /* 5. Fixa a imagem para que ela não role com a página (opcional) */
+    background-attachment: fixed;
+
+    /* 6. Garante que o body ocupe no mínimo a altura total da tela */
+    min-height: 100vh;
+
+
+
+
+
+}
+form{
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button{
+    width: 100%;
+    background-color: gray; 
+    border-color: gray; 
+}
+

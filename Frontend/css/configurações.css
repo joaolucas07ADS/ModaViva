@@ -1,0 +1,249 @@
+body{
+    display: flex;
+    
+     /* 1. O caminho da sua imagem */
+    background-image: url('/Frontend/assets/6.svg');
+
+    /* 2. Faz a imagem cobrir toda a área sem distorcer (essencial) */
+    background-size: cover;
+
+    /* 3. Centraliza a imagem na tela */
+    background-position: center center;
+
+    /* 4. Impede que a imagem se repita (lado a lado) */
+    background-repeat: no-repeat;
+
+    /* 5. Fixa a imagem para que ela não role com a página (opcional) */
+    background-attachment: fixed;
+
+    /* 6. Garante que o body ocupe no mínimo a altura total da tela */
+    min-height: 100vh;
+
+}
+#LOgo{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+#user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(22, 22, 22);
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px;
+  
+}
+#sidebar_content{
+    padding: 12px;
+}
+#side_items{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+.side-items{  
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.side-items.active{
+    background-color:  #737274;
+}
+.side-items:hover:not(.active), #logout_btn:hover{
+    background-color: rgb(240, 240, 240);
+    
+}
+.side-items a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+.side-items.active a{
+    color: rgb(0, 0, 0);
+}
+.side-items a i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 45px;
+}
+#user_info{
+    display: flex;
+    flex-direction: column;
+}
+#user_info span{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+#logout{
+    border-top: 1px solid rgb(240, 240, 240);
+    padding: 12px;
+}
+#logout_btn{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    width: 100%;
+    color: black;
+}
+#opem_btn{
+    position: absolute;
+    top: 45px;
+    right: -10px;
+    background-color: gray;
+    color: white;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+#opem_btn_icon{
+    transition: transform .3s ease;
+}
+.open-sidebar #opem_btn_icon{
+    transform: rotate(180deg);
+}
+.item-description{
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    transition:width .6s;
+    color: black;
+    
+}
+#sidebar.open-sidebar{
+    min-width: 15%;
+}
+#sidebar.open-sidebar .item-description{
+    width: 150px;
+   
+}
+#sidebar.open-sidebar .side-items a {
+   justify-content: flex-start;
+   gap: 14px;
+}
+/* Ajuste do container principal */
+main {
+    flex: 1; /* Faz o conteúdo ocupar todo o resto da tela ao lado da sidebar */
+    display: flex;
+    flex-direction: column;
+   /* Um cinza bem claro para destacar a tabela branca */
+    transition: all .5s;
+    min-width: 0; /* Impede que a tabela empurre a sidebar para fora */
+}
+
+/* Barra de Navegação Superior */
+.top-bar {
+   
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.top-bar h1 {
+    font-size: 24px;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+/* Container da Tabela */
+.table-container {
+    padding: 0 30px 30px 30px;
+    overflow-x: auto; /* Permite scroll horizontal se a tela for muito pequena */
+}
+
+/* Estilização da Tabela */
+.table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.table thead {
+    background-color: gray;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.table th {
+    text-align: left;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.table tr:hover {
+    background-color: #f9fafb; /* Efeito de destaque ao passar o mouse */
+}
+
+/* Estilo das Badges de Status */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.bg-success {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.bg-danger {
+    background-color: #fed7d7;
+    color: #822727;
+}
+
+i{
+color: #302f2f;
+}
+.fa-solid fa-right-from-bracket{
+    color: black;
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ModaViva</title>
+    <link rel="stylesheet" href="css/Estoque.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="/Frontend/assets/Logo.svg" id="LOgo">
+                <p id="user_infos">
+                    <span class="item-description">
+                        ModaViva
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+
+                <li class="side-items active">
+                    <a href="#">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span class="item-description">
+                            Estoque
+                        </span>
+                    </a>
+                </li>
+
+
+
+                <li class="side-items">
+                    <a href="/Frontend/configurações.html">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="item-description">
+                            configuração
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <Button id="opem_btn">
+                <i id="opem_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </Button>
+        </div>
+        <div id="logout">
+            <a href="../index.html" id="logout_btn" style="text-decoration: none;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    logout
+                </span>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <header class="top-bar">
+            <h1>Estoque</h1>
+
+            <button id="btn-adicionar">
+                <i class="fa-solid fa-plus"></i>
+                adicionar
+            </button>
+        </header>
+
+
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Fornecedor</th>
+                        <th scope="col">Tamanho</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Valor unit.</th>
+                        <th scope="col">Estoque total</th>
+                        <th scope="col">Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+   
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Adicionar Produto</h2>
+
+            <input type="text" id="produto" placeholder="Produto">
+            <input type="text" id="fornecedor" placeholder="Fornecedor">
+            <input type="text" id="tamanho" placeholder="Tamanho">
+            <input type="text" id="categoria" placeholder="Categoria">
+            <input type="number" id="valor" placeholder="Valor Unitário">
+            <input type="number" id="quantidade" placeholder="Quantidade">
+
+            <div class="modal-buttons">
+                <button id="salvar">Salvar</button>
+                <button id="fechar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="../Backend/Estoque.js"></script>
+</body>
+
+</html>

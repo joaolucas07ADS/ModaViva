@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ModaViva</title>
+    <link rel="stylesheet" href="css/Configurações.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="/Frontend/assets/Logo.svg" id="LOgo">
+                <p id="user_infos">
+                    <span class="item-description">
+                        ModaViva
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-items">
+                    <a href="/Frontend/Estoque.html">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span class="item-description">
+                            Estoque
+                        </span>
+                    </a>
+                </li>
+
+
+
+                <li class="side-items active">
+                    <a href="#">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="item-description">
+                            configuração
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <Button id="opem_btn">
+                <i id="opem_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </Button>
+        </div>
+        <div id="logout">
+            <a href="../index.html" id="logout_btn" style="text-decoration: none;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    logout
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="top-bar">
+            <h1>Configurações</h1>
+        </header>
+
+        <div class="config-container" style="padding: 20px 30px; display: flex; gap: 30px; flex-wrap: wrap;">
+
+           
+
+            <div class="config-card"
+                style="background: white; padding: 25px; border-radius: 12px; flex: 1; min-width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3><i class="fa-solid fa-bell"></i> Alertas de Estoque</h3>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid #edf2f7;">
+
+                <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                    <label for="limite_estoque">Avisar estoque baixo quando menor ou igual a:</label>
+                    <input type="number" id="limite_estoque" value="5"
+                        style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <button id="btn-salvar-limite" class="btn-primary"
+                        style="margin-top: 10px; padding: 10px; background-color: #4f46e5; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                        Salvar Limite
+                    </button>
+                </div>
+
+                <div style="margin-top: 25px; padding: 15px; background-color: #fffbeb; border-radius: 8px; border: 1px solid #fde68a;">
+                    <h4 style="margin-bottom: 10px; font-size: 14px; color: #92400e;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Produtos em status Perigoso:
+                    </h4>
+                    <ul id="lista_perigosos" style="list-style-type: none; padding: 0; margin: 0; font-size: 14px; color: #b45309; line-height: 1.6;">
+                        <li>Carregando produtos...</li>
+                    </ul>
+                </div>
+            </div>
+
+              <div class="config-card"
+                style="background: white; padding: 25px; border-radius: 12px; flex: 1; min-width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h3><i class="fa-solid fa-right-left"></i> Movimentação Rápida</h3>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid #edf2f7;">
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="select_produto">Selecionar Produto:</label>
+                        <select id="select_produto"
+                            style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                            <option value="">Carregando produtos...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="qtd_movimento">Quantidade:</label>
+                        <input type="number" id="qtd_movimento" placeholder="Ex: 10"
+                            style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button id="btn-entrada"
+                            style="flex: 1; padding: 12px; background-color: #10b981; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                            + Entrada
+                        </button>
+                        <button id="btn-saida"
+                            style="flex: 1; padding: 12px; background-color: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                            - Saída
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../Backend/configurações.js"></script>
+</body>
+
+</html>
